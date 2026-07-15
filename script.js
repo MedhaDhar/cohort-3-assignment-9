@@ -12,7 +12,6 @@ const features = document.querySelectorAll(".feature");
 
 const backBtn = document.getElementById("backBtn");
 
-const themeBtn = document.getElementById("themeBtn");
 const dateTime = document.getElementById("dateTime");
 
 
@@ -116,61 +115,9 @@ setInterval(updateDateTime,1000);
 
 
 // =======================================================
-// THEME
-// =======================================================
-
-// =======================================================
-// THEME
-// =======================================================
-
-function applyTheme(theme){
-
-    if(theme === "dark"){
-
-        document.body.classList.add("dark");
-
-        themeBtn.innerHTML = '<i class="ri-sun-fill"></i>';
-
-    }
-
-    else{
-
-        document.body.classList.remove("dark");
-
-        themeBtn.innerHTML = '<i class="ri-moon-fill"></i>';
-
-    }
-
-    changeBackground();
-
-}
-
-const savedTheme = localStorage.getItem("theme") || "light";
-
-applyTheme(savedTheme);
-
-themeBtn.addEventListener("click",()=>{
-
-    const newTheme = document.body.classList.contains("dark")
-
-        ? "light"
-
-        : "dark";
-
-    localStorage.setItem("theme", newTheme);
-
-    applyTheme(newTheme);
-
-});
-
-
-
-
-
-// =======================================================
 // DYNAMIC BACKGROUND
 // =======================================================
-function changeBackground() {
+function changeBackground(){
 
     const hour = new Date().getHours();
 
@@ -207,9 +154,41 @@ function changeBackground() {
 
 }
 
-changeBackground();
+const heroTitle = document.querySelector(".hero h1");
 
-setInterval(changeBackground,60000);
+function updateGreeting(){
+
+    const hour = new Date().getHours();
+
+    if(hour>=5 && hour<12){
+
+        heroTitle.textContent = "🌅 Good Morning";
+
+    }
+
+    else if(hour>=12 && hour<17){
+
+        heroTitle.textContent = "☀️ Good Afternoon";
+
+    }
+
+    else if(hour>=17 && hour<20){
+
+        heroTitle.textContent = "🌇 Good Evening";
+
+    }
+
+    else{
+
+        heroTitle.textContent = "🌙 Good Night";
+
+    }
+
+}
+
+updateGreeting();
+
+setInterval(updateGreeting,60000);
 
 
 
