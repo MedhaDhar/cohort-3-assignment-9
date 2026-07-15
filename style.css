@@ -1,0 +1,1272 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    transition:.4s;
+    color:var(--text);
+
+
+    background:linear-gradient(135deg,#edf4ff,#dbeafe);
+    padding-bottom:60px;
+     display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+}
+#homePage{
+
+    flex:1;
+
+}
+
+/* ==========================================
+        THEME VARIABLES
+========================================== */
+
+:root{
+
+    --bg:#edf4ff;
+    --card:#ffffff;
+    --text:#1e293b;
+    --text-light:#64748b;
+
+    --primary:#3b82f6;
+    --secondary:#60a5fa;
+
+    --border:#dbe4ef;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ---------- Dark Theme ---------- */
+
+body.dark{
+
+    --bg:#0f172a;
+
+    --card:#1e293b;
+
+    --text:#ffffff;
+
+    --text-light:#cbd5e1;
+
+    --primary:#38bdf8;
+
+    --secondary:#0ea5e9;
+
+    --border:#334155;
+
+    --shadow:0 20px 40px rgba(0,0,0,.35);
+
+   
+
+}
+
+/* ==========================================
+      BACKGROUND (TIME OF DAY)
+========================================== */
+/* 
+ body.morning{
+    background:linear-gradient(135deg,#FFE8B5,#FFD6A5);
+}
+
+body.afternoon{
+    background:linear-gradient(135deg,#D6EEFF,#BEE3F8);
+}
+
+body.evening{
+    background:linear-gradient(135deg,#FFB199,#9D7CFF);
+}
+
+body.night{
+    background:linear-gradient(135deg,#edf4ff,#dbeafe);
+} */
+
+body.morning{
+    background:
+    linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)),
+    url("./images/morning.jpg") center/cover no-repeat fixed;
+}
+
+body.afternoon{
+    background:
+    linear-gradient(rgba(255,255,255,.20),rgba(255,255,255,.20)),
+    url("./images/afternoon.jpg") center/cover no-repeat fixed;
+}
+
+body.evening{
+    background:
+    linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.20)),
+    url("./images/sunset.jpg") center/cover no-repeat fixed;
+}
+
+body.night{
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("./images/night.jpg") center/cover no-repeat fixed;
+}
+/* ==========================================
+        BUTTON
+========================================== */
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+        HEADER
+========================================== */
+
+.header{
+
+    width:86%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:28px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.logo i{
+
+    color:var(--primary);
+
+    font-size:34px;
+
+}
+
+.logo h2{
+
+    color:var(--text);
+
+    font-size:30px;
+
+
+    font-weight:600;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+#dateTime{
+
+    color:var(--text);
+
+    text-align:right;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+}
+
+#themeBtn{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#themeBtn:hover{
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================
+          FOOTER
+========================== */
+
+.footer{
+
+    width:100%;
+
+    margin-top:50px;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(10px);
+
+    border-top:1px solid rgba(0,0,0,.08);
+
+}
+
+.footer p{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:500;
+
+    letter-spacing:.5px;
+
+}
+
+/* Dark Mode */
+
+body.dark .footer{
+
+    background:#111827;
+
+    border-top:1px solid #334155;
+
+}
+
+body.dark .footer p{
+
+    color:#cbd5e1;
+
+}
+/* ==========================================
+        WEATHER CARD
+========================================== */
+
+.weather-card{
+
+    width:86%;
+
+    margin:0 auto 45px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+     color:inherit;
+
+}
+
+.weather-card h3{
+
+     color:inherit;
+
+    font-size:26px;
+
+    margin-bottom:18px;
+
+}
+
+#weather{
+
+     color:inherit;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+        HERO
+========================================== */
+
+.hero{
+
+    width:86%;
+
+    margin:0 auto 45px;
+
+}
+
+.hero h1{
+
+     color:inherit;
+
+    font-size:48px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.hero p{
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+}
+
+/* ==========================================
+        DASHBOARD
+========================================== */
+
+#dashboard{
+
+    width:86%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--primary);
+
+    color:white;
+
+    box-shadow:0 18px 35px rgba(0,0,0,.25);
+
+}
+
+.card:hover p{
+
+    color:white;
+
+}
+.card i{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+    color:inherit;
+
+}
+
+.card h3{
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+/* ==========================================
+        FEATURE CONTAINER
+========================================== */
+
+#featureContainer{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:50px auto;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.feature h2{
+
+    font-size:32px;
+
+    color:inherit;
+
+    margin-bottom:35px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* ==========================================
+        BACK BUTTON
+========================================== */
+
+#backBtn{
+
+    background:var(--primary);
+    color:#fff;
+    padding:12px 28px;
+    border-radius:12px;
+    font-size:16px;
+    margin-bottom:35px;
+}
+
+#backBtn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+        INPUT BOX
+========================================== */
+
+.inputBox{
+
+    display:flex;
+    gap:16px;
+    margin-bottom:30px;
+
+}
+
+.inputBox input{
+
+    flex:1;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    padding:15px 18px;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+.inputBox input::placeholder{
+
+    color:var(--text-light);
+
+}
+
+.inputBox button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+}
+
+/* ==========================================
+        TODO
+========================================== */
+
+#taskList{
+
+    list-style:none;
+
+}
+
+#taskList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 18px;
+
+    background:var(--bg);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+}
+
+.taskBtns{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.taskBtns button{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.completed{
+
+    text-decoration:line-through;
+
+    opacity:.6;
+
+}
+
+.important{
+
+    color:#f59e0b;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+        DAILY PLANNER
+========================================== */
+
+#plannerContainer{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.timeSlot{
+
+    display:grid;
+
+    grid-template-columns:130px 1fr;
+
+    gap:20px;
+
+    align-items:center;
+
+}
+
+.timeSlot label{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.timeSlot textarea{
+
+    width:100%;
+
+    resize:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+        POMODORO
+========================================== */
+
+#timer{
+
+    text-align:center;
+
+    font-size:72px;
+
+    margin:40px 0;
+
+    font-weight:700;
+
+}
+
+.timerBtns{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.timerBtns button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+}
+
+/* ==========================================
+        QUOTE
+========================================== */
+
+blockquote{
+
+    font-size:28px;
+
+    line-height:1.8;
+
+    color:var(--text);
+
+    margin-bottom:20px;
+
+}
+
+#author{
+
+    color:var(--text-light);
+
+    margin-bottom:30px;
+
+    font-weight:600;
+
+}
+
+#newQuote{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+}
+
+/* ==========================================
+        GOALS
+========================================== */
+
+#goalList{
+
+    list-style:none;
+
+    margin-top:25px;
+
+}
+
+#goalList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:var(--bg);
+
+    border:1px solid var(--border);
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+}
+
+#goalProgress{
+
+    margin-top:30px;
+
+    font-size:22px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+        SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/* ==========================================
+        ANIMATION
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.weather-card,
+.card,
+#featureContainer{
+
+    background:rgba(255,255,255,.16);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:white;
+
+}
+
+
+.logo h2,
+.hero h1,
+.hero p,
+.card h3,
+.card p,
+.weather-card,
+.feature,
+blockquote,
+#dateTime{
+
+    color:white;
+
+}
+
+input,
+textarea{
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.3);
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#ddd;
+
+}
+
+.footer{
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+}
+
+/* ==========================================
+        RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.hero h1{
+
+font-size:54px;
+
+}
+
+.logo h2{
+
+font-size:34px;
+
+}
+
+.card h3{
+
+font-size:26px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.header{
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+}
+
+.header-right{
+
+flex-direction:column;
+
+}
+
+#dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:44px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.inputBox{
+
+flex-direction:column;
+
+}
+
+.timeSlot{
+
+grid-template-columns:1fr;
+
+}
+
+.timerBtns{
+
+flex-wrap:wrap;
+
+}
+
+#timer{
+
+font-size:65px;
+
+}
+
+.feature h2{
+
+font-size:32px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.logo{
+
+flex-direction:column;
+
+}
+
+.logo h2{
+
+font-size:28px;
+
+}
+
+.weather-card h3{
+
+font-size:28px;
+
+}
+
+#dateTime{
+
+font-size:18px;
+
+}
+
+#themeBtn{
+
+width:55px;
+
+height:55px;
+
+font-size:24px;
+
+}
+
+}
+
+#sessionType{
+
+    text-align:center;
+
+    font-size:20px;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-top:15px;
+
+}
+
+
+.weatherInfo{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    color:var(--text-light);
+
+}
+
+#temperature{
+
+    font-size:55px;
+
+    margin:10px 0;
+
+}
+
+#city{
+
+    font-size:28px;
+
+}
+
+
+
+/* ==========================
+   DARK MODE FIX
+========================== */
+/* 
+body.dark {
+
+    background: #0f172a !important;
+} */
+
+/* Header */
+
+body.dark .logo h2,
+body.dark #dateTime{
+
+    color:#ffffff !important;
+
+}
+
+/* Hero */
+
+body.dark .hero h1{
+
+    color:#ffffff;
+
+}
+
+body.dark .hero p{
+
+    color:#cbd5e1;
+
+}
+
+/* Weather Card */
+
+body.dark .weather-card{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+body.dark .weather-card h3{
+
+    color:white;
+
+}
+
+body.dark #city{
+
+    color:white;
+
+}
+
+body.dark #temperature{
+
+    color:#38bdf8;
+
+}
+
+body.dark #condition{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .weatherInfo{
+
+    color:#cbd5e1;
+
+}
+
+/* Dashboard Cards */
+
+body.dark .card{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+body.dark .card h3{
+
+    color:white;
+
+}
+
+body.dark .card p{
+
+    color:#cbd5e1;
+
+}
+
+/* Feature Container */
+
+body.dark #featureContainer{
+
+    background:#1e293b;
+
+}
+
+/* Headings */
+
+body.dark .feature h2{
+
+    color:white;
+
+}
+
+/* Inputs */
+
+body.dark input,
+body.dark textarea{
+
+    background:#0f172a;
+
+    color:white;
+
+    border:1px solid #334155;
+
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/* Todo & Goals */
+
+body.dark #taskList li,
+body.dark #goalList li{
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+/* Quote */
+
+body.dark blockquote{
+
+    color:white;
+
+}
+
+body.dark #author{
+
+    color:#cbd5e1;
+
+}
+
+/* Planner */
+
+body.dark .timeSlot label{
+
+    color:#38bdf8;
+
+}
+
+/* Timer */
+
+body.dark #timer{
+
+    color:white;
+
+}
+

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+      <div class="logo">
+        <i class="ri-dashboard-fill"></i>
+        <h2>Productivity Dashboard</h2>
+      </div>
+
+      <div class="header-right">
+        <div id="dateTime"></div>
+
+        <button id="themeBtn">
+          <i class="ri-moon-fill"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ================= HOME PAGE ================= -->
+
+    <div id="homePage">
+      <!-- ================= WEATHER ================= -->
+      <section class="weather-card">
+        <h3>🌤 Current Weather</h3>
+
+        <div id="weather">
+          <h2 id="city">--</h2>
+
+          <h1 id="temperature">--°C</h1>
+
+          <p id="condition">Loading...</p>
+
+          <div class="weatherInfo">
+            <span id="humidity"> Humidity -- </span>
+
+            <span id="wind"> Wind -- </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero">
+        <h1>Welcome</h1>
+
+        <p>Stay organized, focused and productive every day.</p>
+      </section>
+      <!-- ================= DASHBOARD ================= -->
+
+      <main id="dashboard">
+        <div class="card" data-feature="todo">
+          <i class="ri-list-check-3"></i>
+          <h3>Todo List</h3>
+          <p>Manage your daily tasks</p>
+        </div>
+
+        <div class="card" data-feature="planner">
+          <i class="ri-calendar-check-fill"></i>
+          <h3>Daily Planner</h3>
+          <p>Plan your day</p>
+        </div>
+
+        <div class="card" data-feature="pomodoro">
+          <i class="ri-timer-fill"></i>
+          <h3>Pomodoro Timer</h3>
+          <p>Stay focused</p>
+        </div>
+
+        <div class="card" data-feature="quote">
+          <i class="ri-double-quotes-l"></i>
+          <h3>Motivation Quotes</h3>
+          <p>Daily inspiration</p>
+        </div>
+
+        <div class="card" data-feature="goals">
+          <i class="ri-flag-fill"></i>
+          <h3>Daily Goals</h3>
+          <p>Track your progress</p>
+        </div>
+      </main>
+    </div>
+
+    <!-- ================================================= -->
+    <!--                FEATURE CONTAINER                  -->
+    <!-- ================================================= -->
+
+    <section id="featureContainer" class="hidden">
+      <button id="backBtn">
+        <i class="ri-arrow-left-line"></i>
+        Back
+      </button>
+
+      <!-- ================= TODO ================= -->
+
+      <section id="todo" class="feature hidden">
+        <h2><i class="ri-list-check-3"></i> Todo List</h2>
+
+        <div class="inputBox">
+          <input type="text" id="taskInput" placeholder="Enter Task" />
+
+          <button id="addTask">
+            <i class="ri-add-line"></i>
+            Add Task
+          </button>
+        </div>
+
+        <ul id="taskList"></ul>
+      </section>
+
+      <!-- ================= DAILY PLANNER ================= -->
+
+      <section id="planner" class="feature hidden">
+        <h2>📅 Daily Planner</h2>
+
+        <div id="plannerContainer"></div>
+      </section>
+
+      <!-- ================= POMODORO ================= -->
+
+      <section id="pomodoro" class="feature hidden">
+        <h2>🍅 Pomodoro Timer</h2>
+
+        <p id="sessionType">Work Session</p>
+
+        <h1 id="timer">25:00</h1>
+
+        <div class="timerBtns">
+          <button id="startTimer">Start</button>
+
+          <button id="pauseTimer">Pause</button>
+
+          <button id="resetTimer">Reset</button>
+        </div>
+      </section>
+
+      <!-- ================= QUOTE ================= -->
+
+      <section id="quote" class="feature hidden">
+        <h2><i class="ri-double-quotes-l"></i> Motivation Quote</h2>
+
+        <blockquote id="quoteText">
+          Your daily inspiration will appear here...
+        </blockquote>
+
+        <p id="author"></p>
+
+        <button id="newQuote">New Quote</button>
+      </section>
+
+      <!-- ================= DAILY GOALS ================= -->
+
+      <section id="goals" class="feature hidden">
+        <h2>🎯 Daily Goals</h2>
+
+        <div class="inputBox">
+          <input type="text" id="goalInput" placeholder="Enter Goal" />
+
+          <button id="addGoal">
+            <i class="ri-add-line"></i>
+            Add Goal
+          </button>
+        </div>
+
+        <ul id="goalList"></ul>
+
+        <h3 id="goalProgress">0 / 0 Completed</h3>
+      </section>
+    </section>
+    <footer class="footer">
+
+    <p>© 2026 Productivity Dashboard </p>
+
+</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
